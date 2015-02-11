@@ -397,6 +397,23 @@ class ImapMailbox {
 	}
 
 	/**
+	 * Plural verison of getMail
+	 *
+	 * @param $mailIds Array
+	 * @return IncomingMail(s) Array
+	 */
+	public function getMails($mails)
+	{
+		$results = array();
+
+		foreach ($mails as $mail) {
+			$results[] = $this->getMail($mail);
+		}
+
+		return $results;
+	}
+
+	/**
 	 * Get mail data
 	 *
 	 * @param $mailId
